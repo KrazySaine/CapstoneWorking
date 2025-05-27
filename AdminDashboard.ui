@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminDashboard</class>
+ <widget class="QWidget" name="AdminDashboard">
+  <property name="windowTitle">
+   <string>Admin Dashboard</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QPushButton" name="viewUsersButton">
+     <property name="text">
+      <string>View All Users</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="searchUserButton">
+     <property name="text">
+      <string>Search User</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="deleteUserButton">
+     <property name="text">
+      <string>Delete User</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="addFundsButton">
+     <property name="text">
+      <string>Add Funds</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="resetPasswordButton">
+     <property name="text">
+      <string>Reset Password</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="summaryButton">
+     <property name="text">
+      <string>System Summary</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+</ui>

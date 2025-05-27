@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UserDashboard</class>
+ <widget class="QWidget" name="UserDashboard">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>300</width>
+    <height>250</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>User Dashboard</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QPushButton" name="checkBalanceButton">
+     <property name="text">
+      <string>Check Balance</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="depositButton">
+     <property name="text">
+      <string>Deposit</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="withdrawButton">
+     <property name="text">
+      <string>Withdraw</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="transferButton">
+     <property name="text">
+      <string>Transfer</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+</ui>
