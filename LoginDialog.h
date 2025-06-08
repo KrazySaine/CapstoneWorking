@@ -22,6 +22,7 @@ public:
 
 private slots:
     void on_loginButton_clicked();
+    void on_createUserButton_clicked();
 
 private:
     Ui::LoginDialog *ui;

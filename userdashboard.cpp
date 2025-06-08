@@ -93,3 +93,10 @@ void UserDashboard::on_transferButton_clicked()
         QMessageBox::information(this, "Success", "Transfer successful.");
     }
 }
+void UserDashboard::on_logoutButton_clicked()
+{
+    emit userLoggedOut();
+    this->close();
+
+}
+

@@ -25,6 +25,7 @@ public:
     QPushButton *depositButton;
     QPushButton *withdrawButton;
     QPushButton *transferButton;
+    QPushButton *logoutButton;
 
     void setupUi(QWidget *UserDashboard)
     {
@@ -53,6 +54,11 @@ public:
 
         verticalLayout->addWidget(transferButton);
 
+        logoutButton = new QPushButton(UserDashboard);
+        logoutButton->setObjectName("logoutButton");
+
+        verticalLayout->addWidget(logoutButton);
+
 
         retranslateUi(UserDashboard);
 
@@ -66,6 +72,7 @@ public:
         depositButton->setText(QCoreApplication::translate("UserDashboard", "Deposit", nullptr));
         withdrawButton->setText(QCoreApplication::translate("UserDashboard", "Withdraw", nullptr));
         transferButton->setText(QCoreApplication::translate("UserDashboard", "Transfer", nullptr));
+        logoutButton->setText(QCoreApplication::translate("UserDashboard", "Logout", nullptr));
     } // retranslateUi
 
 };

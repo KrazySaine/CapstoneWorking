@@ -34,19 +34,35 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    loadUsers();
+    while (true) {
+        loadUsers();
+        LoginDialog login(kids);
+        if (login.exec() == QDialog::Accepted) {
+            if (login.isAdminLoggedIn()) {
+                AdminDashboard *adminDash = new AdminDashboard(kids);
+                adminDash->show();
 
-    LoginDialog login(kids);
-    if (login.exec() == QDialog::Accepted) {
-        if (login.isAdminLoggedIn()) {
-            AdminDashboard *adminDash = new AdminDashboard(kids);
-            adminDash->show();
+                return a.exec();  // Exit after admin closes dashboard
+            } else {
+                int userIndex = login.getLoggedInUserIndex();
+                UserDashboard *userDash = new UserDashboard(kids, userIndex);
+
+                // Handle logout signal
+                QObject::connect(userDash, &UserDashboard::userLoggedOut, [&]() {
+                    userDash->deleteLater();
+                    qApp->exit(1001);
+                });
+
+                userDash->show();
+                int result = a.exec();
+                if (result == 1001) {
+                    continue;
+                }
+                return result;
+            }
         } else {
-            int userIndex = login.getLoggedInUserIndex();
-            UserDashboard *userDash = new UserDashboard(kids, userIndex);
-            userDash->show();
+            break;
         }
-        return a.exec();
     }
 
     return 0;

@@ -30,6 +30,7 @@ public:
     QLabel *passwordLabel;
     QLineEdit *passwordEdit;
     QPushButton *loginButton;
+    QPushButton *createUserButton;
 
     void setupUi(QDialog *LoginDialog)
     {
@@ -69,6 +70,11 @@ public:
 
         verticalLayout->addWidget(loginButton);
 
+        createUserButton = new QPushButton(LoginDialog);
+        createUserButton->setObjectName("createUserButton");
+
+        verticalLayout->addWidget(createUserButton);
+
 
         retranslateUi(LoginDialog);
 
@@ -81,6 +87,7 @@ public:
         usernameLabel->setText(QCoreApplication::translate("LoginDialog", "Username:", nullptr));
         passwordLabel->setText(QCoreApplication::translate("LoginDialog", "Password:", nullptr));
         loginButton->setText(QCoreApplication::translate("LoginDialog", "Login", nullptr));
+        createUserButton->setText(QCoreApplication::translate("LoginDialog", "Create User", nullptr));
     } // retranslateUi
 
 };

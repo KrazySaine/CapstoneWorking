@@ -37,6 +37,33 @@ void LoginDialog::on_loginButton_clicked()
     QMessageBox::warning(this, "Login Failed", "Invalid credentials.");
 }
 
+void LoginDialog::on_createUserButton_clicked()
+{
+    QString username = ui->usernameEdit->text();
+    QString password = ui->passwordEdit->text();
+
+    if (username.isEmpty() || password.isEmpty()) {
+        QMessageBox::warning(this, "Input Error", "Username and password cannot be empty.");
+        return;
+    }
+
+    // Check if user already exists
+    for (const auto& user : users) {
+        if (user.username == username.toStdString()) {
+            QMessageBox::warning(this, "Error", "Username already exists.");
+            return;
+        }
+    }
+
+    // Create new user
+    User newUser;
+    newUser.username = username.toStdString();
+    newUser.password = password.toStdString();
+    users.push_back(newUser);
+
+    QMessageBox::information(this, "Success", "User created successfully.");
+}
+
 int LoginDialog::getLoggedInUserIndex() const
 {
     return loggedInIndex;
